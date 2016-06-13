@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\Shell\vim tabnew]
+@="Vim tabnew"
+
+[HKEY_CLASSES_ROOT\*\Shell\vim tabnew\command]
+@="\"D:\\Program Files\\Vim\\vim74\\gvim.exe\" -p --remote-tab-silent \"%1\" \"%*\""
