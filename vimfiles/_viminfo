@@ -8,21 +8,40 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/indent
+~MSle0~/filetype
 
 # Last Substitute Search Pattern:
-~MSle0&;
+~MSle0&isset
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
 :w
-:vi .gitignore
-:q
 :qa
-:'<,'>"
+:BundleList
+:q
+:help php-indent
 :wq
+:BundleInstall '2072/PHP-Indenting-for-VIm'
+:vi processorder.php
+:set ft=phtml
+:set ft=html
+:set ft = html
+:vi freight.php
+:BundleInstall 'captbaritone/better-indent-support-for-php-with-html'
+:BundleInstall '
+:set ft=php
+:pwd
+:r>r>r>wr>r>
+:vi 
+:vi orderform.html
+:'<,'>s/isset/empty/g
+:ls
+:tabn orderform.html
+:tn orderform.html
+:vi .gitignore
+:'<,'>"
 :%s/;//gn
 :f ;
 :'<,'>
@@ -41,7 +60,6 @@ $
 :vi Order.xml
 :tabnew 
 :vi OperationLog.xml
-:vi 
 :vi Occupation.xml
 :vi MessageTemplateLog.xml
 :w MessageTemplate.xml
@@ -49,26 +67,17 @@ $
 :vi userPasswordModifyLog.xml
 :15
 :vi MerchantPasswordModifyLog.xml
-:'<,'>s/old/new/g
-:vi AdminPasswordModifyLog.xml
-:'<,'>w
-:vi UserWithdrawLog.xml
-:vi MerchantWithdrawLog.xml
-:vi UserCommissionLog.xml
-:'<,'>s/Balance/Log/g
-:vi MerchantCommissionLog.xml
-:'<,'>s/Balance/Log
-:2
-:vi UserCommissionBalance.xml
-:vi MerchantCommissionBalance.xml
-:vi Merchant.xml
-:vi UserLoginLog.xml
-:vi MerchantLoginLog.xml
-:vi AdministratorLoginLog.xml
-:vi GroupRank.xml
-:we
 
 # Search String History (newest to oldest):
+?/filetype
+? \$\(cursor\|select\)\$
+? isset
+?/Check
+?/<A-p>
+?/html
+?/积分
+?/cstar
+?/con
 ?/indent
 ?/Host
 ?/tabs
@@ -99,7 +108,6 @@ $
 ?/Lu
 ? ,
 ? \<修改\>
-? \$\(cursor\|select\)\$
 ? notification error png_bg
 ? \<luna_pinyin\>
 ?/youtube
@@ -111,592 +119,762 @@ $
 ?/acc
 ?/fab
 ?/a
-?/数量
-?/content
-?/link
-?/search
-? 面料
-? fabricPro
-?/\cfab
-? auto
 
 # Expression History (newest to oldest):
 
 # Input Line History (newest to oldest):
-@html
+@tr>td[align]*
+@table>tr>td*
+@td>select>option*
+@td<select<option*
+@tr>td
+@h2
 @h1
+@tr*>td+td[align]>input[type]
+@tr*>td[align="center"]>input[type="text" size="3" maxlength="3]
+@tr>td[width]*
+@tr>td*width
+@tr>td*>wdith
+@li
+@html
 @strong
 @div
 @tr>td*
-@tr>td
 @a
 
 # Input Line History (newest to oldest):
 
 # Registers:
 "0	LINE	0
-	### 2016-5-22 22:39 by *Rick*
-	#### 简要说明
-	* 利用泛型实现了DAO类的通用写法BaseDAO；
-	* 把所有的实体类对应的DAO建立了起来，并实现最基本CRUD功能；
-	* 增添了每个DAO的单元测试类，但是只进行了添加和查看所有两个功能的单元测试；
-	
-	#### 新增
-	* Date类和Long类型的数据库类型转换控制器`DateTypeHandler.java`；
-	* MD5加密类`Encryptor.java`；
-	* 33个MyBatis的映射文件；
-	* 33个DAO层接口；
-	* 33个DAO层接口实现类；
-	* 33个DAO层实现类的单元测试类。
-	* 通用DAO类BaseDAO接口及其实现；
-	
-	#### 修改
-	* 修正了之前实体类中的成员变量的类型错误；
-"1	LINE	0
+		set ft=phtml
+""1	LINE	0
 	
 "2	LINE	0
-	
+	Bundle '2072/PHP-Indenting-for-VIm'
 "3	LINE	0
 	
 "4	LINE	0
-		<Context path="/partycall/avatar" docBase="D:\partycall\avatar" debug="0" privileged="true"/>
+	
 "5	LINE	0
-	* 33个DAO层实现类的单元测试类。
+	
 "6	LINE	0
-	* 33个DAO层接口实现类；
+	
 "7	LINE	0
-	* 33个DAO层接口；
+	" php缩进
+	function IndentPHPHTML()
+		if &filetype!="php"
+			normal gg=G
+			return
+		endif
+		set ft=html & set ft=php
+		normal gg=G
+	endfunction
+	" 绑定Ctrl + Shift + l为格式化php文件快捷键
+	nnoremap <C-S-l> :call IndentPHPHTML()<cr>
 "8	LINE	0
-	* 33个MyBatis的映射文件；
+	filetype indent on   
 "9	LINE	0
-	* MD5加密类`Encryptor.java`；
-""-	CHAR	0
-	/
+		set ft=php
+"j	CHAR	0
+	jjkk
+"-	CHAR	0
+	 
 
 # File marks:
-'0  1  0  D:\Program Files\Vim\.gitignore
-'1  96  0  D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\fragment\PartyCallFragment.java
-'2  304  9  D:\Program Files\Vim\_vimrc
-'3  303  17  D:\Program Files\Vim\_vimrc
-'4  144  18  D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\activity\UserInfoActivity.java
-'5  10  0  D:\作业\大一\C++\C++大作业最终版\homework\account.cpp
-'6  18  14  D:\作业\大一\C++\C++大作业最终版\homework\caonima.cpp
-'7  3  0  E:\Minecraft\mclauncher.cfg
-'8  87  0  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
-'9  129  65  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
+'0  31  0  D:\web-develop\nginx\www\processorder.php
+'1  1  0  D:\web-develop\nginx\www\index.php
+'2  20  8  D:\web-develop\nginx\www\freight.php
+'3  312  0  D:\Program Files\Vim\_vimrc
+'4  2  0  D:\web-develop\nginx\www\[Vundle] list
+'5  313  34  D:\Program Files\Vim\_vimrc
+'6  1  0  D:\web-develop\nginx\www\freight.php
+'7  134  0  D:\Program Files\Vim\_vimrc
+'8  308  24  D:\Program Files\Vim\_vimrc
+'9  308  10  D:\Program Files\Vim\_vimrc
 
 # Jumplist (newest first):
--'  1  0  D:\Program Files\Vim\.gitignore
--'  304  0  D:\Program Files\Vim\_vimrc
--'  96  0  D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\fragment\PartyCallFragment.java
--'  43  0  D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\fragment\PartyCallFragment.java
--'  303  0  D:\Program Files\Vim\_vimrc
--'  49  0  D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\fragment\PartyCallFragment.java
--'  1  0  D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\fragment\PartyCallFragment.java
--'  144  18  D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\activity\UserInfoActivity.java
--'  1  0  D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\activity\UserInfoActivity.java
--'  10  0  D:\作业\大一\C++\C++大作业最终版\homework\account.cpp
--'  40  0  D:\作业\大一\C++\C++大作业最终版\homework\account.cpp
--'  223  16  D:\Program Files\Vim\_vimrc
--'  213  17  D:\Program Files\Vim\_vimrc
--'  201  8  D:\Program Files\Vim\_vimrc
--'  134  16  D:\Program Files\Vim\_vimrc
--'  1  0  D:\作业\大一\C++\C++大作业最终版\homework\account.cpp
--'  18  14  D:\作业\大一\C++\C++大作业最终版\homework\caonima.cpp
--'  1  0  D:\作业\大一\C++\C++大作业最终版\homework\caonima.cpp
--'  3  0  E:\Minecraft\mclauncher.cfg
--'  1  0  E:\Minecraft\mclauncher.cfg
--'  87  0  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
--'  129  6  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
--'  1  0  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
--'  4678  2  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\web.xml
--'  143  2  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\web.xml
--'  134  0  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
--'  130  1  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
--'  132  94  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
--'  116  7  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
--'  97  19  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
--'  95  35  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
--'  91  31  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
--'  22  0  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
--'  1  0  D:\Program Files\Apache\apache-tomcat-7.0.68\conf\web.xml
--'  1  48  D:\Android-Projects\Partycall\readme.md
--'  1123  0  D:\作业\大三上\操作系统\大型实验\实验源码\tiny-DMS\function.cpp
--'  1  0  D:\作业\大三上\操作系统\大型实验\实验源码\tiny-DMS\function.cpp
--'  145  22  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\activity\MainActivity.java
--'  50  33  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\activity\MainActivity.java
--'  147  8  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\activity\MainActivity.java
--'  146  8  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\activity\MainActivity.java
--'  144  56  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\activity\MainActivity.java
--'  33  0  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\activity\MainActivity.java
--'  32  56  D:\作业\2015运河杯\MySupermarket\app\src\main\res\layout\activity_main.xml
--'  35  12  D:\作业\2015运河杯\MySupermarket\app\src\main\res\layout\activity_main.xml
--'  1  0  D:\作业\2015运河杯\MySupermarket\app\src\main\res\layout\activity_main.xml
--'  1  66  C:\Users\Rick\Desktop\merchantGetBriefListDataByCity
--'  4  0  D:\Android-Projects\Contacts\app\src\main\java\per\rick\contacts\tool\PinyinComparator.java
--'  1  0  D:\Android-Projects\Contacts\app\src\main\java\per\rick\contacts\tool\PinyinComparator.java
--'  1908  0  C:\Users\Rick\Desktop\JSON-java\JSONObject.java
--'  1  0  C:\Users\Rick\Desktop\JSON-java\JSONObject.java
--'  10  0  C:\Users\Rick\Desktop\MultipartRequest\app\src\main\java\com\sentdz\multipar\multipartrequest\MultipartRequest.java
--'  1  0  C:\Users\Rick\Desktop\MultipartRequest\app\src\main\java\com\sentdz\multipar\multipartrequest\MultipartRequest.java
--'  11  0  C:\Users\Rick\Desktop\MultipartRequest\app\src\main\java\com\sentdz\multipar\multipartrequest\MultipartRequest.java
--'  12  33  C:\Users\Rick\Desktop\MultipartRequest\app\src\main\java\com\sentdz\multipar\multipartrequest\MultipartRequest.java
--'  1  0  C:\Users\Rick\Desktop\MultipartRequest\app\src\main\java\com\sentdz\multipar\multipartrequest\MultipartEntity.java
--'  49  0  C:\Users\Rick\Desktop\MultipartRequest\app\src\main\java\com\sentdz\multipar\multipartrequest\MultipartEntity.java
--'  1  19  C:\Users\Rick\Desktop\MyFlowLayout\res\layout\activity_main.xml
--'  55  25  D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\request\MultiPartRequest.java
--'  1  0  D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\request\MultiPartRequest.java
--'  63  0  D:\Android-Projects\Test-curriculum\app\src\main\java\per\rick\test_curriculum\adapter\WeekChooseAdapter.java
--'  1  0  D:\Android-Projects\Test-curriculum\app\src\main\java\per\rick\test_curriculum\adapter\WeekChooseAdapter.java
--'  139  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\src\main\java\com\amap\location\demo\Hight_Accuracy_Activity.java
--'  1  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\src\main\java\com\amap\location\demo\Hight_Accuracy_Activity.java
--'  29  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\src\main\java\com\amap\location\demo\StartActivity.java
--'  1  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\src\main\java\com\amap\location\demo\StartActivity.java
--'  23  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\src\main\AndroidManifest.xml
--'  1  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\src\main\AndroidManifest.xml
--'  23  18  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\build.gradle
--'  1  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\build.gradle
--'  1  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\settings.gradle
--'  13  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\gradle.properties
--'  1  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\gradle.properties
--'  8  39  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\build.gradle
--'  1  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\build.gradle
--'  52  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\src\main\res\values\strings.xml
--'  1  0  C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\src\main\res\values\strings.xml
--'  73  18  D:\Android-Projects\Partycall\app\src\main\res\layout\fragment_user_center.xml
--'  1  0  D:\Android-Projects\Partycall\app\src\main\res\layout\fragment_user_center.xml
--'  44  46  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\Data.java
--'  59  0  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\Data.java
--'  3  0  C:\Users\Rick\Desktop\CircleImageView\circleimageview\src\main\res\values\attrs.xml
--'  1  0  C:\Users\Rick\Desktop\CircleImageView\circleimageview\src\main\res\values\attrs.xml
--'  1  0  C:\Users\Rick\Desktop\CircleImageView\sample\src\main\res\values\styles.xml
--'  1  0  C:\Users\Rick\Desktop\CircleImageView\sample\src\main\res\values\strings.xml
--'  1  0  C:\Users\Rick\Desktop\CircleImageView\sample\src\main\res\values\dimens.xml
--'  34  38  C:\Users\Rick\Desktop\CircleImageView\sample\src\main\res\layout\activity_main.xml
--'  1  0  C:\Users\Rick\Desktop\CircleImageView\sample\src\main\res\layout\activity_main.xml
--'  226  4  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\activity\MainActivity.java
--'  13  0  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\fragment\RecommendFragment.java
--'  1  0  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\fragment\RecommendFragment.java
--'  106  0  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\fragment\MainFragment.java
--'  1  0  D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\fragment\MainFragment.java
--'  1  0  C:\Users\Rick\Desktop\MyAppWeixin\res\layout\main.xml
--'  16  0  C:\Users\Rick\Desktop\MyAppWeixin\res\layout\main_tab_address.xml
--'  1  0  C:\Users\Rick\Desktop\MyAppWeixin\res\layout\main_tab_address.xml
--'  1  0  C:\Users\Rick\Desktop\MyAppWeixin\res\layout\whats1.xml
+-'  31  0  D:\web-develop\nginx\www\processorder.php
+-'  1  0  D:\web-develop\nginx\www\processorder.php
+-'  66  4  D:\web-develop\nginx\www\processorder.php
+-'  53  5  D:\web-develop\nginx\www\processorder.php
+-'  1  0  D:\web-develop\nginx\www\index.php
+-'  2  0  D:\web-develop\nginx\www\index.php
+-'  20  8  D:\web-develop\nginx\www\freight.php
+-'  1  0  D:\web-develop\nginx\www\freight.php
+-'  13  0  D:\web-develop\nginx\www\freight.php
+-'  312  0  D:\Program Files\Vim\_vimrc
+-'  1  0  ~\bundle\PHP-Indenting-for-VIm\.gitignore
+-'  2  0  D:\web-develop\nginx\www\[Vundle] list
+-'  313  34  D:\Program Files\Vim\_vimrc
+-'  3  0  D:\web-develop\nginx\www\freight.php
+-'  4  0  D:\web-develop\nginx\www\freight.php
+-'  25  0  D:\web-develop\nginx\www\freight.php
+-'  134  0  D:\Program Files\Vim\_vimrc
+-'  308  5  D:\Program Files\Vim\_vimrc
+-'  244  5  D:\Program Files\Vim\_vimrc
+-'  240  5  D:\Program Files\Vim\_vimrc
+-'  223  0  D:\Program Files\Vim\_vimrc
+-'  158  0  D:\Program Files\Vim\_vimrc
+-'  22  8  D:\web-develop\nginx\www\freight.php
+-'  18  2  D:\web-develop\nginx\www\freight.php
+-'  11  0  D:\web-develop\nginx\www\freight.php
+-'  1  0  D:\Program Files\Vim\_vimrc
+-'  23  0  D:\web-develop\nginx\www\freight.php
+-'  28  3  D:\web-develop\nginx\www\processorder.php
+-'  17  0  D:\web-develop\nginx\www\processorder.php
+-'  15  23  D:\web-develop\nginx\www\freight.php
+-'  13  0  D:\web-develop\nginx\www\processorder.php
+-'  72  0  D:\web-develop\nginx\www\processorder.php
+-'  307  6  D:\Program Files\Vim\_vimrc
+-'  306  17  D:\Program Files\Vim\_vimrc
+-'  24  0  D:\web-develop\nginx\www\freight.php
+-'  266  9  D:\Program Files\Vim\_vimrc
+-'  16  0  D:\web-develop\nginx\www\freight.php
+-'  8  0  D:\web-develop\nginx\www\freight.php
+-'  5  1  D:\web-develop\nginx\www\freight.php
+-'  60  51  D:\web-develop\nginx\www\processorder.php
+-'  30  1  D:\web-develop\nginx\www\processorder.php
+-'  38  4  D:\web-develop\nginx\www\orderform.html
+-'  1  0  D:\web-develop\nginx\www\orderform.html
+-'  36  4  D:\web-develop\nginx\www\orderform.html
+-'  30  21  D:\web-develop\nginx\www\orderform.html
+-'  29  4  D:\web-develop\nginx\www\orderform.html
+-'  70  0  D:\web-develop\nginx\www\processorder.php
+-'  43  69  D:\web-develop\nginx\www\processorder.php
+-'  33  18  D:\web-develop\nginx\www\processorder.php
+-'  34  7  D:\web-develop\nginx\www\processorder.php
+-'  4  1  D:\web-develop\nginx\www\processorder.php
+-'  20  38  D:\web-develop\nginx\www\processorder.php
+-'  44  0  D:\web-develop\nginx\www\orderform.html
+-'  14  0  D:\web-develop\nginx\www\processorder.php
+-'  12  3  D:\web-develop\nginx\www\processorder.php
+-'  10  3  D:\web-develop\nginx\www\processorder.php
+-'  73  0  D:\web-develop\nginx\www\processorder.php
+-'  251  5  D:\Program Files\Vim\_vimrc
+-'  257  22  D:\Program Files\Vim\_vimrc
+-'  9  17  D:\web-develop\nginx\www\processorder.php
+-'  8  22  D:\web-develop\nginx\www\processorder.php
+-'  25  8  D:\web-develop\nginx\www\orderform.html
+-'  26  49  D:\web-develop\nginx\www\orderform.html
+-'  24  37  D:\web-develop\nginx\www\orderform.html
+-'  23  8  D:\web-develop\nginx\www\orderform.html
+-'  15  9  D:\web-develop\nginx\www\orderform.html
+-'  43  19  D:\web-develop\nginx\www\orderform.html
+-'  14  0  D:\web-develop\nginx\www\orderform.html
+-'  12  16  D:\web-develop\nginx\www\orderform.html
+-'  10  3  D:\web-develop\nginx\www\orderform.html
+-'  9  12  D:\web-develop\nginx\www\orderform.html
+-'  8  54  D:\web-develop\nginx\www\orderform.html
+-'  47  0  D:\web-develop\nginx\www\orderform.html
+-'  1  0  D:\web-develop\nginx\www\feedback.html
+-'  1  0  D:\web-develop\nginx\www\index.html
+-'  1  0  D:\web-develop\nginx\www\laravel\readme.md
+-'  40  0  D:\web-develop\nginx\www\results.php
+-'  1  0  D:\web-develop\nginx\www\results.php
+-'  1  0  C:\Users\Rick\Desktop\新建文本文档.txt
+-'  1  0  D:\Eclipse-workspace\partycall\.gitignore
+-'  254  194  D:\Eclipse-workspace\PY\src\com\py\service\impl\ApplyServiceImpl.java
+-'  38  4  D:\web-develop\nginx\www\orderform.html
+-'  1  0  D:\web-develop\nginx\www\orderform.html
 
 # History of marks within files (newest to oldest):
 
+> D:\web-develop\nginx\www\processorder.php
+	"	31	0
+	^	66	5
+	.	64	0
+	+	20	17
+	+	72	0
+	+	17	1
+	+	20	1
+	+	20	38
+	+	17	2
+	+	18	0
+	+	19	1
+	+	20	0
+	+	19	0
+	+	17	1
+	+	18	0
+	+	17	1
+	+	20	37
+	+	72	0
+	+	20	37
+	+	16	0
+	+	20	37
+	+	17	1
+	+	72	0
+	+	17	1
+	+	72	0
+	+	17	1
+	+	72	0
+	+	17	0
+	+	72	0
+	+	22	13
+	+	23	42
+	+	24	41
+	+	25	19
+	+	26	0
+	+	32	24
+	+	33	19
+	+	34	20
+	+	33	18
+	+	37	5
+	+	38	1
+	+	37	11
+	+	38	25
+	+	39	56
+	+	41	15
+	+	40	22
+	+	42	44
+	+	43	69
+	+	63	7
+	+	64	16
+	+	65	0
+	+	64	24
+	+	65	21
+	+	66	0
+	+	63	1
+	+	67	0
+	+	64	1
+	+	65	1
+	+	66	1
+	+	72	0
+	+	68	48
+	+	69	31
+	+	70	0
+	+	69	0
+	+	31	0
+	+	28	29
+	+	30	12
+	+	29	54
+	+	31	0
+	+	72	0
+	+	46	7
+	+	45	20
+	+	62	0
+	+	46	11
+	+	49	6
+	+	50	0
+	+	53	0
+	+	56	0
+	+	50	6
+	+	53	6
+	+	56	6
+	+	48	25
+	+	51	0
+	+	53	0
+	+	54	0
+	+	57	0
+	+	51	39
+	+	54	46
+	+	51	40
+	+	48	26
+	+	57	44
+	+	61	6
+	+	60	51
+	+	72	0
+	+	3	0
+	+	31	0
+	+	10	0
+	+	3	0
+	+	28	0
+	+	3	0
+	+	64	4
+	+	65	4
+	+	66	4
+	+	64	0
+
+> D:\web-develop\nginx\www\index.php
+	"	1	0
+	.	2	0
+	+	2	0
+
+> D:\web-develop\nginx\www\freight.php
+	"	20	8
+	^	15	24
+	.	3	0
+	+	1	0
+	+	8	0
+	+	4	0
+	+	5	14
+	+	8	7
+	+	24	0
+	+	8	15
+	+	9	0
+	+	8	32
+	+	10	37
+	+	11	6
+	+	22	1
+	+	14	14
+	+	21	0
+	+	22	0
+	+	21	0
+	+	16	8
+	+	16	6
+	+	16	20
+	+	21	0
+	+	16	6
+	+	21	0
+	+	19	9
+	+	21	0
+	+	17	0
+	+	16	7
+	+	17	22
+	+	18	14
+	+	22	0
+	+	19	10
+	+	17	13
+	+	18	13
+	+	17	21
+	+	18	21
+	+	21	0
+	+	15	17
+	+	21	0
+	+	20	16
+	+	22	0
+	+	17	0
+	+	16	0
+	+	20	0
+	+	20	0
+	+	3	0
+	+	13	0
+	+	20	0
+	+	15	23
+	+	16	0
+	+	3	0
+	+	13	0
+	+	13	0
+	+	3	0
+	+	13	0
+	+	3	0
+
+> ~\bundle\PHP-Indenting-for-VIm\.gitignore
+	"	1	0
+
 > D:\Program Files\Vim\_vimrc
-	"	304	0
-	^	304	10
-	.	304	9
+	"	312	0
+	.	313	0
 	+	304	22
 	+	303	23
 	+	304	10
 	+	303	20
 	+	304	9
+	+	307	60
+	+	306	17
+	+	307	1
+	+	308	0
+	+	308	0
+	+	308	8
+	+	308	0
+	+	6	0
+	+	308	0
+	+	308	0
+	+	308	0
+	+	308	0
+	+	308	51
+	+	308	0
+	+	308	0
+	+	308	13
+	+	308	12
+	+	308	10
+	+	308	11
+	+	308	6
+	+	308	8
+	+	308	12
+	+	308	11
+	+	308	10
+	+	308	10
+	+	308	12
+	+	308	6
+	+	308	12
+	+	308	10
+	+	308	0
+	+	308	24
+	+	309	0
+	+	310	0
+	+	308	0
+	+	311	0
+	+	312	0
+	+	311	0
+	+	312	0
+	+	308	0
+	+	313	0
+	+	313	0
 
-> D:\Program Files\Vim\.gitignore
-	"	1	0
-	^	1	1
+> ~\doc\indent.cnx
+	"	732	8
+
+> D:\web-develop\nginx\www\[Vundle] list
+	"	2	0
 	.	1	0
-	+	2	0
 	+	1	0
 
-> D:\Program Files\Vim\右键vim新标签打开.reg
-	"	1	0
-
-> D:\Program Files\Vim\右键vim打开菜单.reg
-	"	1	0
-
-> D:\Android-Projects\Partycall\.gitignore
-	"	1	0
-
-> D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\fragment\PartyCallFragment.java
-	"	96	0
-	.	43	0
-	+	43	0
-	+	43	0
-
-> D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\activity\UserInfoActivity.java
-	"	144	18
-
-> D:\作业\大一\C++\C++大作业最终版\homework\account.cpp
-	"	10	0
-
-> D:\作业\大一\C++\C++大作业最终版\homework\caonima.cpp
-	"	18	14
-
-> E:\Minecraft\mclauncher.cfg
-	"	3	0
-
-> D:\Program Files\Apache\apache-tomcat-7.0.68\conf\server.xml
-	"	87	0
-	^	129	66
-	.	129	65
-	+	132	94
-	+	10	0
-	+	132	0
-	+	130	0
-	+	129	34
-	+	130	0
-	+	129	65
-
-> D:\Program Files\Apache\apache-tomcat-7.0.68\conf\context.xml
-	"	23	0
-
-> D:\Program Files\Apache\apache-tomcat-7.0.68\conf\web.xml
-	"	4678	2
-
-> D:\Android-Projects\Partycall\readme.md
-	"	1	48
-	^	1	51
-	.	1	48
-	+	1	48
-
-> D:\作业\大三上\操作系统\大型实验\实验源码\tiny-DMS\function.cpp
-	"	1123	0
-
-> D:\作业\大三上\操作系统\大型实验\实验源码\tiny-DMS\disk.data
-	"	2	0
-
-> D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\activity\MainActivity.java
-	"	145	22
-
-> D:\作业\2015运河杯\MySupermarket\app\src\main\res\layout\activity_main.xml
-	"	32	56
-	^	35	34
-	.	35	0
-	+	35	0
-
-> C:\Users\Rick\Desktop\merchantGetBriefListDataByCity
-	"	1	66
-
-> D:\Android-Projects\Contacts\app\src\main\java\per\rick\contacts\tool\PinyinComparator.java
-	"	4	0
-
-> C:\Users\Rick\Desktop\JSON-java\JSONObject.java
-	"	1908	0
-
-> C:\Users\Rick\Desktop\MultipartRequest\app\src\main\java\com\sentdz\multipar\multipartrequest\MultipartRequest.java
-	"	10	0
-
-> C:\Users\Rick\Desktop\MultipartRequest\app\src\main\java\com\sentdz\multipar\multipartrequest\MultipartEntity.java
-	"	1	0
-
-> C:\Users\Rick\Desktop\MyFlowLayout\res\layout\activity_main.xml
-	"	1	19
-
-> C:\Users\Rick\Desktop\MyFlowLayout\src\org\apmem\tools\layouts\R.java
-	"	22	0
-
-> C:\Users\Rick\Desktop\MyFlowLayout\src\org\apmem\tools\layouts\FlowLayout.java
-	"	88	0
-
-> D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\request\MultiPartRequest.java
-	"	55	25
-
-> D:\Android-Projects\Test-curriculum\app\src\main\java\per\rick\test_curriculum\adapter\WeekChooseAdapter.java
-	"	63	0
-
-> C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\src\main\java\com\amap\location\demo\Hight_Accuracy_Activity.java
-	"	139	0
-
-> C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\src\main\java\com\amap\location\demo\StartActivity.java
-	"	29	0
-
-> C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\src\main\AndroidManifest.xml
-	"	23	0
-
-> C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\build.gradle
-	"	23	18
-
-> C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\proguard-rules.pro
-	"	1	0
-
-> C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\build.gradle
-	"	13	0
-
-> C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\settings.gradle
-	"	1	0
-
-> C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\gradle.properties
-	"	13	0
-
-> C:\Users\Rick\Desktop\android_studio\AMapLocationDemo\app\src\main\res\values\strings.xml
-	"	52	0
-
-> D:\Android-Projects\Partycall\app\src\main\res\layout\fragment_user_center.xml
-	"	73	18
-
-> D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\Data.java
-	"	44	46
-
-> C:\Users\Rick\Desktop\CircleImageView\circleimageview\src\main\res\values\attrs.xml
-	"	3	0
-
-> C:\Users\Rick\Desktop\CircleImageView\sample\src\main\res\values\styles.xml
-	"	1	0
-
-> C:\Users\Rick\Desktop\CircleImageView\sample\src\main\res\values\strings.xml
-	"	1	0
-
-> C:\Users\Rick\Desktop\CircleImageView\sample\src\main\res\values\dimens.xml
-	"	1	0
-
-> C:\Users\Rick\Desktop\CircleImageView\sample\src\main\res\layout\activity_main.xml
-	"	34	38
-
-> D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\fragment\RecommendFragment.java
-	"	13	0
-
-> D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\fragment\MainFragment.java
-	"	106	0
-
-> C:\Users\Rick\Desktop\MyAppWeixin\res\layout\main.xml
-	"	1	0
-
-> C:\Users\Rick\Desktop\MyAppWeixin\res\layout\main_tab_address.xml
-	"	16	0
-
-> C:\Users\Rick\Desktop\MyAppWeixin\res\layout\whats1.xml
-	"	1	0
-
-> C:\Users\Rick\Desktop\debug.keystore
-	"	1	0
-
-> D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\PagerSlidingTabStrip.java
-	"	67	0
-
-> D:\Eclipse-workspace\partycall\src\struts.xml
-	"	14	2
-
-> D:\Eclipse-workspace\partycall\src\com\pengsuplus\partycall\action\UserAction.java
-	"	53	34
-
-> D:\Eclipse-workspace\partycall\devLog.md
-	"	74	88
-	^	74	91
-	.	74	88
-	+	1	49
-	+	16	28
-	+	25	8
-	+	23	5
-	+	24	0
-	+	26	5
-	+	75	0
-	+	15	2
-	+	7	78
-	+	7	81
-	+	7	1
-	+	8	1
-	+	4	50
-	+	6	13
-	+	13	107
-	+	14	0
-	+	10	0
-	+	9	24
-	+	10	18
-	+	11	18
-	+	9	3
-	+	10	3
-	+	11	3
-	+	13	90
-	+	17	0
-	+	29	28
-	+	30	0
-	+	31	44
-	+	34	29
-	+	33	95
-	+	34	90
-	+	36	0
-	+	32	99
-	+	35	49
-	+	38	62
-	+	40	241
-	+	45	29
-	+	42	0
-	+	46	14
-	+	49	107
-	+	54	13
-	+	47	51
-	+	54	132
-	+	54	23
-	+	58	48
-	+	61	59
-	+	52	2
-	+	54	2
-	+	58	2
-	+	54	29
-	+	55	1
-	+	56	28
-	+	57	1
-	+	54	29
-	+	56	28
-	+	55	19
-	+	54	29
-	+	52	77
-	+	53	30
-	+	9	0
-	+	63	0
-	+	62	0
-	+	67	0
-	+	65	44
-	+	66	57
-	+	63	17
-	+	69	70
-	+	70	52
-	+	71	80
-	+	74	88
-
-> C:\Users\Rick\Desktop\cn\zeroall\javalab\ibatis\SetterInterceptor.java
+> ~\bundle\PHP-Indenting-for-VIm\README.md
 	"	19	0
 
-> C:\Users\Rick\Desktop\cn\zeroall\javalab\ibatis\SetterFactory.java
-	"	1	0
+> ~\bundle\PHP-Indenting-for-VIm\indent\php.vim
+	"	826	0
 
-> C:\Users\Rick\Desktop\cn\zeroall\javalab\ibatis\Client.java
-	"	13	0
-
-> C:\Users\Rick\Desktop\cn\zeroall\javalab\ibatis\BaseDO.java
-	"	13	0
-
-> C:\Users\Rick\Desktop\cn\zeroall\javalab\ibatis\MemberDO.java
-	"	58	0
-
-> C:\Users\Rick\Desktop\cn\zeroall\javalab\ibatis\app.xml
-	"	7	2
-
-> C:\Users\Rick\Desktop\cn\zeroall\javalab\ibatis\sqlmaps.xml
-	"	1	0
-
-> C:\Users\Rick\Desktop\redis-in-action\java\src\main\java\Chapter01.java
-	"	102	61
-
-> C:\Users\Rick\Desktop\volley\build\intermediates\bundles\release\AndroidManifest.xml
-	"	1	0
-
-> C:\Users\Rick\Desktop\volley\build.gradle
-	"	18	2
-	.	18	0
-	+	34	25
-	+	33	23
-	+	18	0
-	+	33	0
-	+	35	0
-	+	33	0
-	+	22	48
-	+	18	0
-
-> C:\Users\Rick\Desktop\volley\build.xml
-	"	88	6
-
-> C:\Users\Rick\Desktop\volley\rules.gradle
-	"	1	0
-
-> C:\Users\Rick\Desktop\volley\pom.xml
-	"	23	0
-
-> C:\Users\Rick\Desktop\volley\proguard.cfg
-	"	34	0
-
-> C:\Users\Rick\Desktop\volley\proguard-project.txt
-	"	10	0
-
-> C:\Users\Rick\Desktop\volley\bintray.gradle
-	"	78	0
-
-> D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\LoginThread.java
-	"	44	0
-
-> C:\Users\Rick\Desktop\volley\custom_rules.xml
-	"	1	0
-
-> D:\作业\2015运河杯\MySupermarket\app\src\main\java\com\mysupermarket\activity\LoginActivity.java
-	"	104	0
-
-> C:\Users\Rick\Desktop\OrderActivity.java
-	"	145	42
-
-> D:\Android-Projects\Test-curriculum\app\src\main\java\per\rick\test_curriculum\widget\ConfirmDialog.java
-	"	152	41
-
-> D:\Android-Projects\Test-curriculum\app\src\main\res\drawable\dialog_bg.xml
-	"	1	0
-
-> D:\Android-Projects\Test-curriculum\app\src\main\res\values\styles.xml
-	"	11	0
-
-> D:\Android-Projects\Test-curriculum\app\src\main\res\layout\dialog_confirm_layout.xml
-	"	13	0
-
-> D:\Eclipse-workspace\zjut_test\src\com\example\tests\ZjutTest.java
-	"	23	0
-	.	25	0
-	+	24	2
-	+	25	0
-
-> C:\Users\Rick\AppData\Roaming\Tencent\QQ\Temp\MQR1C6$)N3U$T5J)K)S~8MN.png
-	"	1	0
-
-> D:\作业\大三下\软测\实验6\实验6\ZjutTest.java
-	"	25	0
-
-> C:\Users\Rick\Desktop\实验6\ZjutTest.java
-	"	24	0
-
-> C:\Users\Rick\Desktop\;
-	"	1	0
+> ~\indent\php.vim
+	"	17	18
 	.	1	0
 	+	1	0
 
-> D:\Android-Projects\Contacts\app\src\main\java\per\rick\contacts\widget\SideBar.java
-	"	87	0
+> D:\Program Files\Vim\vim74\indent\php.vim
+	"	403	0
 
-> D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\activity\SplashActivity.java
+> D:\web-develop\nginx\www\option-window
+	"	1	0
+	.	941	0
+	+	1881	0
+	+	941	0
+
+> D:\web-develop\nginx\www\orderform.html
+	"	38	4
+	^	36	5
+	.	38	0
+	+	1	0
+	+	1	0
+	+	8	0
+	+	5	16
+	+	8	48
+	+	9	9
+	+	10	2
+	+	9	18
+	+	10	0
+	+	10	24
+	+	10	7
+	+	43	0
+	+	43	0
+	+	43	0
+	+	10	0
+	+	11	17
+	+	12	16
+	+	3	0
+	+	14	9
+	+	43	0
+	+	43	0
+	+	14	0
+	+	15	11
+	+	16	80
+	+	20	0
+	+	15	13
+	+	19	11
+	+	20	54
+	+	24	0
+	+	23	19
+	+	24	56
+	+	26	8
+	+	26	36
+	+	26	50
+	+	10	24
+	+	16	53
+	+	44	0
+	+	26	0
+	+	29	0
+	+	27	0
+	+	37	0
+	+	37	0
+	+	30	26
+	+	31	22
+	+	32	22
+	+	33	22
+	+	34	22
+	+	36	0
+	+	26	0
+	+	38	0
+
+> ~\syntax\php.vim~
+	"	2730	21
+
+> D:\web-develop\nginx\www\NERD_tree_1
+	"	4	0
+	.	1	0
+	+	1	0
+
+> D:\web-develop\nginx\stop_nginx.bat
 	"	1	0
 
-> D:\Android-Projects\Partycall\app\src\main\res\anim\anim_splash_logo_alpha.xml
+> D:\web-develop\nginx\start_nginx.bat
+	"	9	64
+	.	9	64
+	+	9	64
+
+> D:\web-develop\nginx\conf\nginx.conf
+	"	36	8
+
+> D:\web-develop\nginx\conf\fastcgi.conf
+	"	16	0
+
+> D:\web-develop\nginx\www\feedback.html
 	"	1	0
 
-> D:\Android-Projects\Test-curriculum\app\src\main\java\per\rick\test_curriculum\controller\CourseController.java
-	"	304	2
-
-> D:\Android-Projects\Test-curriculum\app\src\main\java\per\rick\test_curriculum\widget\CalendarWeekChangeDialog.java
-	"	187	0
-
-> D:\Android-Projects\Test-curriculum\app\src\main\java\per\rick\test_curriculum\widget\CourseButton.java
-	"	31	0
-
-> D:\Android-Projects\Test-curriculum\app\src\main\java\per\rick\test_curriculum\adapter\CurriculumAdapter.java
-	"	49	48
-
-> D:\Android-Projects\Test-curriculum\app\src\main\java\per\rick\test_curriculum\activity\MainActivity.java
-	"	60	38
-
-> D:\Android-Projects\Contacts\app\src\main\res\drawable-v21\add_remove_button_bg.xml
+> D:\web-develop\nginx\www\index.html
 	"	1	0
 
-> D:\Android-Projects\Contacts\app\src\main\res\drawable-v21\item_spinner_bg.xml
+> D:\web-develop\nginx\www\laravel\readme.md
 	"	1	0
 
-> D:\Android-Projects\Contacts\app\src\main\res\layout\item_info_insert.xml
-	"	13	0
+> D:\web-develop\nginx\www\results.php
+	"	1	0
+	.	40	0
+	+	39	0
+	+	40	0
+	+	40	0
 
-> D:\Android-Projects\Contacts\app\src\main\res\values\styles.xml
-	"	148	2
+> C:\Users\Rick\Desktop\新建文本文档.txt
+	"	1	0
+	^	1	87
+	.	1	86
+	+	2	0
+	+	1	86
 
-> D:\Android-Projects\Contacts\app\src\main\res\values\colors.xml
+> D:\Eclipse-workspace\partycall\.gitignore
 	"	1	0
 
-> D:\Android-Projects\Contacts\app\src\main\res\drawable\add_remove_button_bg.xml
+> D:\Eclipse-workspace\PY\src\com\py\service\impl\ApplyServiceImpl.java
+	"	254	194
+
+> D:\Eclipse-workspace\PY\src\com\py\service\impl\ActivityServiceImpl.java
+	"	332	39
+	m	368	58
+
+> D:\Eclipse-workspace\PY\src\com\py\util\Encryption.java
+	"	97	10
+
+> D:\Eclipse-workspace\PY\WebRoot\userList.jsp
+	"	33	2
+
+> D:\Eclipse-workspace\PY\src\com\py\util\TimeTask.java
+	"	43	1
+
+> D:\Eclipse-workspace\PY\src\com\py\action\BaseAction.java
+	"	12	18
+
+> D:\Eclipse-workspace\PY\WebRoot\backgroundUpdateCompanyUI.jsp
+	"	54	7
+
+> D:\Eclipse-workspace\PY\WebRoot\backgroundIndex.jsp
+	"	163	29
+
+> D:\Android-Projects\PerfectYoung\app\src\main\res\layout\activity_main.xml
+	"	18	47
+
+> D:\Android-Projects\PerfectYoung\app\src\main\res\drawable\main_checkbox_3_bg.xml
 	"	1	0
 
-> D:\Android-Projects\Contacts\app\src\main\res\drawable-v21\tool_button_bg.xml
+> D:\Android-Projects\PerfectYoung\app\src\main\res\drawable\main_checkbox_0_bg.xml
+	"	3	39
+
+> D:\web-develop\nginx\www\insert_book.php
+	"	22	0
+
+> C:\Program Files\Java\jdk1.8.0_92\jre\lib\fontconfig.properties.src
+	"	196	13
+
+> D:\Program Files\NetBeans 8.1\etc\netbeans.conf
+	"	60	0
+	^	46	225
+	.	46	225
+	+	46	225
+
+> D:\Android-Projects\Test-curriculum\app\src\main\java\per\rick\test_curriculum\activity\AddCourseActivity.java
+	"	94	3
+
+> D:\Android-Projects\PerfectYoung\build.gradle
+	"	1	0
+	^	11	0
+	.	1	0
+	+	1	54
+	+	15	0
+	+	11	0
+	+	12	0
+	+	1	0
+
+> D:\Android-Projects\PerfectYoung\app\build.gradle
+	"	33	0
+	.	33	0
+	+	33	0
+
+> D:\Android-Projects\Partycall\app\build.gradle
+	"	14	12
+
+> D:\Android-Projects\Partycall\build.gradle
+	"	21	0
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\ui\DialogHelper.java
+	"	23	31
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\ui\PopupWindows.java
+	"	116	0
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\util\FileUtil.java
+	"	204	15
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\base\BaseActivity.java
+	"	37	30
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\util\TDevice.java
+	"	70	0
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\util\TimeZoneUtil.java
+	"	23	1
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\interfaces\DialogControl.java
+	"	11	25
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\interfaces\DialogCallback.java
+	"	9	7
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\httputil\URL.java
+	"	12	4
+	^	12	47
+	.	12	0
+	+	12	0
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\fragment\MsgFragment.java
+	"	55	0
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\httputil\OkHttpClientManager.java
+	"	190	65
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\fragment\TabFragment.java
+	"	61	17
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\cityArea\ProvinceCityAreaParse.java
+	"	99	12
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\cityArea\CityParse.java
+	"	32	31
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\res\layout-sw550dp-large\umeng_socialize_post_share.xml
+	"	46	32
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\AndroidManifest.xml
+	"	70	16
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\res\values\strings.xml
+	"	22	16
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\build.gradle
+	"	35	46
+
+> C:\Users\Rick\Desktop\py_20160510.sql
+	"	46	0
+
+> D:\Eclipse-workspace\PY\.settings\org.eclipse.wst.common.project.facet.core.xml
+	"	6	37
+	.	6	37
+	+	3	0
+	+	6	37
+
+> C:\Users\Rick\Desktop\CodeIgniter-3.0.2\application\config\autoload.php
 	"	1	0
 
-> D:\Android-Projects\Test-curriculum\app\src\main\res\drawable\shape_divider.xml
-	"	4	33
+> C:\Users\Rick\Desktop\CodeIgniter-3.0.2\application\config\config.php
+	"	23	0
 
-> C:\Users\Rick\.android\default.keyset
+> C:\Users\Rick\Desktop\CodeIgniter-3.0.2\application\core\index.html
 	"	1	0
+
+> C:\Users\Rick\Desktop\CodeIgniter-3.0.2\index.php
+	"	171	0
+
+> D:\web-develop\nginx\www\mantisbt\config_inc.php
+	"	7	34
+	^	7	35
+	.	7	34
+	+	7	34
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\res\layout\activity_mine.xml
+	"	10	26
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\activity\DetailForBizActivity.java
+	"	1	0
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\res\drawable\chart_shape_biz_checked.xml
+	"	3	37
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\res\layout\activity_list.xml
+	"	3	20
+
+> C:\Users\Rick\Desktop\PerfectYoung\app\src\main\java\com\pengsu\perfectyoung\bean\CityList.java
+	"	11	22
+
+> D:\Eclipse-workspace\partycall\src\com\pengsuplus\partycall\pojo\sqlmapper\User.xml
+	"	66	0
+
+> D:\Eclipse-workspace\partycall\src\com\pengsuplus\partycall\pojo\sqlmapper\Order.xml
+	"	38	0
+
+> D:\Eclipse-workspace\partycall\src\com\pengsuplus\partycall\tool\comparator\MerchantDistanceComparator.java
+	"	31	1
+
+> D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\adapter\order\OrderListViewBaseAdapter.java
+	"	160	5
+
+> D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\request\MultipartRequest.java
+	"	57	0
+
+> D:\Eclipse-workspace\partycall\src\com\pengsuplus\partycall\handler\DateTypeHandler.java
+	"	26	0
+
+> D:\Eclipse-workspace\partycall\src\com\pengsuplus\partycall\tool\DPointUtils.java
+	"	25	4
+
+> D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\tool\DPoint.java
+	"	66	0
+
+> D:\Android-Projects\Partycall\app\src\main\java\cn\pengsuplus\partycall\network\BaseNetWorker.java
+	"	76	3
+
+> D:\Eclipse-workspace\partycall\src\com\pengsuplus\partycall\service\impl\MerchantServiceImpl.java
+	"	34	0
+
+> D:\Eclipse-workspace\partycall\src\com\pengsuplus\partycall\service\MerchantService.java
+	"	23	3
+
+> D:\Eclipse-workspace\partycall\src\com\pengsuplus\partycall\dao\impl\BaseDAOImpl.java
+	"	97	0
+
+> D:\Eclipse-workspace\partycall\src\com\pengsuplus\partycall\tool\InvitationCodeBuilder.java
+	"	22	43
+
+> C:\Users\Rick\Desktop\index.html
+	"	23	0
+
+> D:\xampp\xampp-control.exe
+	"	1	0
+
+> C:\Users\Rick\Desktop\AMap_Android_API_2DMap_Demo\android_studio\AMap2DDemo\app\src\main\java\com\amap\map2d\demo\location\LocationSourceActivity.java
+	"	94	3
+
+> C:\Users\Rick\Desktop\AMap_Android_API_2DMap_Demo\android_studio\AMap2DDemo\app\src\main\java\com\amap\map2d\demo\cloud\AMApCloudImageCache.java
+	"	1	0
+
+> C:\Users\Rick\Desktop\AMap_Android_API_2DMap_Demo\android_studio\AMap2DDemo\app\src\main\java\com\amap\map2d\demo\cloud\CloudDetailActivity.java
+	"	22	0
+
+> C:\Users\Rick\Desktop\AMap_Android_API_2DMap_Demo\android_studio\AMap2DDemo\app\src\main\java\com\amap\map2d\demo\cloud\CloudActivity.java
+	"	2	0
+
+> C:\Users\Rick\Desktop\AMap_Android_API_2DMap_Demo\android_studio\AMap2DDemo\app\src\main\java\com\amap\map2d\demo\busline\BuslineActivity.java
+	"	25	0
+
+> C:\Users\Rick\Desktop\AMap_Android_API_2DMap_Demo\android_studio\AMap2DDemo\app\src\main\java\com\amap\map2d\demo\basic\OsmMapActivity.java
+	"	15	24
+
+> C:\Users\Rick\Desktop\AMap_Android_API_2DMap_Demo\android_studio\AMap2DDemo\app\src\main\java\com\amap\map2d\demo\basic\BaseMapFragmentActivity.java
+	"	11	18
+
+> C:\Users\Rick\Desktop\AMap_Android_API_2DMap_Demo\android_studio\AMap2DDemo\app\src\main\java\com\amap\map2d\demo\basic\BasicMapActivity.java
+	"	32	2
+
+> C:\Users\Rick\Desktop\AMap_Android_API_2DMap_Demo\android_studio\AMap2DDemo\app\src\main\java\com\amap\map2d\demo\basic\LayersActivity.java
+	"	1	0
+
+> C:\Users\Rick\Desktop\AMap_Android_API_2DMap_Demo\android_studio\AMap2DDemo\app\src\main\java\com\amap\map2d\demo\district\DistrictActivity.java
+	"	27	7
+
+> C:\Users\Rick\Desktop\AMap_Android_API_2DMap_Demo\android_studio\AMap2DDemo\app\src\main\java\com\amap\map2d\demo\geocoder\GeocoderActivity.java
+	"	16	0
