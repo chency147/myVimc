@@ -1,6 +1,3 @@
-"vimrc by Anton Chen
-"2015-3-5 12:09:45
-"
 "判定当前操作系统类型
 if has("win32") || has("win32unix")
 	let g:OS#name = "win"
@@ -54,8 +51,8 @@ if g:OS#win
 		let eq = ''
 		if $VIMRUNTIME =~ ' '
 			if &sh =~ '\<cmd'
-				let cmd = '"' . $VIMRUNTIME . '\diff"'
-				let eq = '""'
+				let cmd = '""' . $VIMRUNTIME . '\diff"'
+				let eq = '"'
 			else
 				let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
 			endif
@@ -68,9 +65,9 @@ endif
 
 " Win平台下窗口全屏组件 gvimfullscreen.dll
 " Alt + Enter 全屏切换
-" F9 降低窗口透明度
-" F10 加大窗口透明度
-" F11 切换Vim是否总在最前面显示
+" Shift + t 降低窗口透明度
+" Shift + y 加大窗口透明度
+" Shift + r 切换Vim是否总在最前面显示
 " Vim启动的时候自动使用当前颜色的背景色以去除Vim的白色边框
 if has('gui_running') && has('gui_win32') && has('libcall')
 	let g:MyVimLib = 'gvimfullscreen.dll'
@@ -102,11 +99,11 @@ if has('gui_running') && has('gui_win32') && has('libcall')
 	"映射 Alt+Enter 切换全屏vim
 	map <a-enter> <esc>:call ToggleFullScreen()<cr>
 	"切换Vim是否在最前面显示
-	nmap <F9> <esc>:call SwitchVimTopMostMode()<cr>
+	nmap <s-r> <esc>:call SwitchVimTopMostMode()<cr>
 	"增加Vim窗体的不透明度
-	nmap <F10> <esc>:call SetAlpha(10)<cr>
+	nmap <s-t> <esc>:call SetAlpha(10)<cr>
 	"增加Vim窗体的透明度
-	nmap <F11> <esc>:call SetAlpha(-10)<cr>
+	nmap <s-y> <esc>:call SetAlpha(-10)<cr>
 	" 默认设置透明
 	autocmd GUIEnter * call libcallnr(g:MyVimLib, 'SetAlpha', g:VimAlpha)
 endif
@@ -162,11 +159,10 @@ set number
 set numberwidth=6
 set laststatus=2
 set cursorline
-set guifont=Consolas\ for\ Powerline\ FixedD:h11
+" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
 set shortmess=atI                          
-colorscheme Lucius
-LuciusBlack
-
+set guifont=Consolas\ for\ Powerline\ FixedD:h11:cANSI
+" set guifontwide=YouYuan:h11:cGB2312
 "隐藏菜单栏
 if g:OS#gui
 	set guioptions-=m " 隐藏菜单栏
@@ -189,14 +185,15 @@ winpos 235 235
 set lines=25 columns=108
 
 "代码高亮
+" colorscheme lucius
+" LuciusBlack
 syntax enable
 syntax on
 
 "设置制表符缩进
-set tabstop=4
-set softtabstop=4
+set ts=4
 set noexpandtab
-
+set softtabstop=4
 "继承缩进
 set autoindent
 set shiftwidth=4
@@ -205,27 +202,18 @@ set shiftwidth=4
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
-" original repos on github<br>Bundle 'mattn/zencoding-vim'  
-" Bundle 'drmingdrmer/xptemplate'  
-
-" vim-scripts repos 
-Bundle 'Yggdroot/indentLine'
-set list lcs=tab:\|\ 
-Bundle 'L9'
-" Bundle 'autocomplpop'
-" let g:AutoComplPop_Behavior = {
-" 			\ 'c': [ {'command' : "\<C-x>\<C-o>",
-" 			\ 'pattern' : ".",
-" 			\ 'repeat' : 0}
-" 			\ ]
-" 			\}
-filetype plugin indent on     " required!
+" 设置没有警告音
+set noeb vb t_vb=
+au GUIEnter * set vb t_vb=
+" nerdTree插件
 Bundle 'scrooloose/nerdtree'
 " 设置NerdTree快捷键
 map <F3> :NERDTreeMirror<CR>
 map <F3> :NERDTreeToggle<CR>
-
+" tab标记
+Bundle 'Yggdroot/indentLine'
+set list lcs=tab:\¦\ 
+set fdm=indent
 " 设置powerline
 Bundle 'Lokaltog/vim-powerline'
 set nocompatible   " Disable vi-compatibility
@@ -233,9 +221,48 @@ set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set noshowmode " Disable the orgin mode showing
 let g:Powerline_symbols = 'fancy'
-" 设置高级的配对关键字间跳转
-runtime macros/matchit.vim
-" 检查当前文件代码语法(php){{{
+" dracular主题
+Bundle 'dracula/vim'
+color dracula
+
+let &colorcolumn=join(range(81,999),",")
+let &colorcolumn="80,".join(range(400,999),",")
+" HTML编辑辅助插件
+Bundle 'mattn/emmet-vim'
+" 注释插件
+Bundle 'scrooloose/nerdcommenter'
+let NERDSpaceDelims=1
+" 自动补全插件
+Bundle 'Shougo/neocomplcache.vim'
+" 对应xml标签高亮
+Bundle 'Valloric/MatchTagAlways'
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'php' : 1,
+    \}
+" 自动填补引号、括号等
+Bundle 'jiangmiao/auto-pairs'
+" 成对标签跳转
+Bundle 'vim-scripts/matchit.zip'
+" 快捷添加surround符号
+Bundle 'tpope/vim-surround'
+" 糢糊搜索插件
+Bundle 'kien/ctrlp.vim'
+" 跳转标签栏
+Bundle 'majutsushi/tagbar'
+nmap <F12> :TagbarToggle<CR>
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+" 检查当前文件代码语法(php)
 function! CheckSyntax_PHP()
 	if &filetype!="php"
 		echohl WarningMsg | echo "Fail to check syntax! Please select the right file!" | echohl None
@@ -256,57 +283,3 @@ function! CheckSyntax_PHP()
 endfunction
 map <A-p> :call CheckSyntax_PHP()<CR>
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-
-" 设定html语言编写辅助插件
-Bundle 'mattn/emmet-vim'
-
-" 上下移动光标时使光标行所在行位于屏幕中央
-" nmap j jzz
-" nmap k kzz
-" Platform
-function! MySys()
-	if has("win32")
-		return "windows"
-	else
-		return "linux"
-	endif
-endfunction
-if MySys() == "windows"   "设定windows系统中ctags程序的位置
-	let Tlist_Ctags_Cmd = 'ctags'
-elseif MySys() == "linux"  "设定linux系统中ctags程序的位置
-	let Tlist_Ctags_Cmd = '/usr/bin/ctags'
-endif
-"只显示当前文件的
-let Tlist_Show_One_File = 1
-"如果taglist窗口是最后一个窗口，则退出vim
-let Tlist_Exit_OnlyWindow = 1
-"在右侧窗口中显示taglist窗口配置好以后
-let Tlist_Use_Right_Window = 1   
-map <silent> <A-q> :TlistToggle<cr>
-
-inoremap <A-9> ()<ESC>i
-inoremap <A-[> []<ESC>i
-inoremap <A-{> {}<ESC>i
-inoremap <A-,> <><ESC>i
-inoremap <A-'> ''<ESC>i
-inoremap <A-"> ""<ESC>i
-" 设置Shougo/neocomplete.vim
-Bundle 'Shougo/neocomplete.vim'
-let g:neocomplete#enable_at_startup = 1 
-
-" 注释插件
-Bundle 'scrooloose/nerdcommenter'
-let NERDSpaceDelims=1
-
-" 第80列往后加下划线
-au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)
-" 设置根据标记折叠
-set fdm=indent
-
-" 更好的php缩进
-" Bundle 'captbaritone/better-indent-support-for-php-with-html'
-
-" html indent  
-let g:html_indent_inctags = "body,head,tbody"   " 缩进body head  
-"let g:html_indent_script1 = "inc"     " 缩进<script>标签  
-"let g:html_indent_style1 = "inc"      " 缩进<style>标签 

@@ -1,0 +1,1 @@
+['function', 'account', 'focus', 'else', 'verify', 'form', 'submit', 'notice', 'loading', 'error', 'length', 'post', 'login_check', 'serialize', 'data', 'setTimeout', 'window', 'parent', 'location', 'system_index', 'return', 'false', 'fleshVerify', 'time', 'Date', 'getTime', 'verifyImg', 'attr', 'remove', 'body', 'append', 'class', 'static_path', 'login']

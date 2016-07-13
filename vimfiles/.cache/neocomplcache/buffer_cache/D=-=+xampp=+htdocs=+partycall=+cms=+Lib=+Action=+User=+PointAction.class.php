@@ -1,0 +1,1 @@
+['class', 'PointAction', 'extends', 'BaseAction', 'public', 'function', 'index', '$web_index_slider', 'Slider', 'get_slider_by_key', 'web_slider', '$this', 'assign', 'web_index_slider', '$search_hot_list', 'Search_hot', 'get_list', 'search_hot_list', '$all_category_list', 'Group_category', 'get_category', 'all_category_list', 'User_score_list', 'now_user', 'display']

@@ -1,1 +1,0 @@
-{'DOCTYPE', 'html', '<html ', 'lang', '<head>', '<meta ', 'charset', '<title>', 'Freight', '</title>', '</head>', '<body>', '<table ', 'border', 'cellpadding', '<tr>', '<td ', 'bgcolor', 'cccccc', 'align', 'center', 'Distance', '</td>', 'Cost', '</tr>', '$distance', 'while', 'echo', 'right\\', '</table>', '</body>', '</html>'}
